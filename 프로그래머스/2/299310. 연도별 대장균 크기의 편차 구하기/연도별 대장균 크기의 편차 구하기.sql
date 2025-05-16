@@ -1,0 +1,10 @@
+-- 코드를 작성해주세요
+
+SELECT B.YEAR, (B.MAX_SIZE - A.SIZE_OF_COLONY) as YEAR_DEV ,  A.ID
+FROM ECOLI_DATA A
+JOIN(
+SELECT YEAR(differentiation_Date) AS YEAR ,MAX(SIZE_OF_COLONY) as MAX_SIZE
+from ecoli_data B
+group by YEAR
+) B ON YEAR(A.DIFFERENTIATION_DATE) = B.YEAR
+order by YEAR asc , YEAR_DEV asc
