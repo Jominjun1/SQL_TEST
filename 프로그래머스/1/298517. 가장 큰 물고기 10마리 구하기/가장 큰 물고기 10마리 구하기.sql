@@ -1,0 +1,4 @@
+SELECT ID , LENGTH 
+FROM FISH_INFO
+Order BY LENGTH desc , ID asc
+Limit 10
